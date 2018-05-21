@@ -9,6 +9,12 @@ export class EventService{
     getEvent(id:number):IEvent{
       return EVENTS.find(a=>a.id === id);
     }
+
+    addEevent(event:IEvent){
+      event.id=999;
+      event.sessions=[];
+      EVENTS.push(event);
+    }
 }
 
 

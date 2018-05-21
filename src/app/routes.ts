@@ -1,3 +1,6 @@
+import { CreateSessionComponent } from './events/create-session/create-session.component';
+import { CreateEventComponent } from './events/create-event/create-event.component';
+import { UserModule } from './user/user.module';
 import { Component } from '@angular/core';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import {Routes} from  "@angular/router"
@@ -7,7 +10,11 @@ import { EventRoutActivatorService } from './events/event-details/event-route-ac
 
 export const appRoute :Routes =[
     {path:"events", component:EventsListComponent},
+    {path:"eventes/new",component:CreateEventComponent},
     {path:"events/:id", component:EventDetailsComponent, canActivate:[EventRoutActivatorService]},
+    {path:"events/session/new", component:CreateSessionComponent},
     {path:"404",component:Error404Component},
-    {path:"",redirectTo:"/events",pathMatch:"full"}
+    {path:"",redirectTo:"/events",pathMatch:"full"},
+    {path:"user",loadChildren:()=>UserModule},
+    // {path:"user",loadChildren:"app/user/user.module#UserModule"}
 ];;
