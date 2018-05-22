@@ -1,3 +1,4 @@
+import { DurationPipe } from './events/shared/duration.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './user/shared/auth.service';
@@ -31,7 +32,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     CreateEventComponent,
     CreateSessionComponent,
     SessionsListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
