@@ -12,7 +12,7 @@ import { EventsListComponent } from './events/events-list/events-list.component'
 import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
 import { NavbarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
-import { ToastrService } from './common/toastr.service';
+import { Toastr_Token, IToastr } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './error/404.component';
@@ -20,6 +20,9 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { CreateSessionComponent } from './events/create-session/create-session.component';
 import { SessionsListComponent } from './events/sessions-list/sessions-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+
+declare let toastr:IToastr;
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
   ],
   providers: [
     EventService,
-    ToastrService,
+    {provide:Toastr_Token, useValue : toastr},
     EventRoutActivatorService,
     AuthService
   ],
