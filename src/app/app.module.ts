@@ -17,6 +17,8 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './error/404.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { CreateSessionComponent } from './events/create-session/create-session.component';
+import { SessionsListComponent } from './events/sessions-list/sessions-list.component';
+import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CreateSessionComponent } from './events/create-session/create-session.c
     EventDetailsComponent,
     Error404Component,
     CreateEventComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionsListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
