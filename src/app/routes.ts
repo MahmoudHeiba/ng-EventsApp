@@ -13,6 +13,6 @@ export const appRoute :Routes =[
     {path:"events/:id", component:EventDetailsComponent, canActivate:[EventRoutActivatorService]},
     {path:"404",component:Error404Component},
     {path:"",redirectTo:"/events",pathMatch:"full"},
-    {path:"user",loadChildren:()=>UserModule},
-    // {path:"user",loadChildren:"app/user/user.module#UserModule"}
+    //{path:"user",loadChildren:()=>UserModule},
+     {path:"user",loadChildren:"app/user/user.module#UserModule"}
 ];;

@@ -1,3 +1,4 @@
+import { JQ_Token } from './common/jQuery.service';
 import { DurationPipe } from './events/shared/duration.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -20,8 +21,11 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { CreateSessionComponent } from './events/create-session/create-session.component';
 import { SessionsListComponent } from './events/sessions-list/sessions-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { SimpleModalComponent } from './common/simple-modal.component';
+import { ModalTriggerDirective } from './common/modal-trigger.directive';
 
 declare let toastr:IToastr;
+declare let jQuery:object;
 
 
 @NgModule({
@@ -36,7 +40,9 @@ declare let toastr:IToastr;
     CreateSessionComponent,
     SessionsListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,7 @@ declare let toastr:IToastr;
   providers: [
     EventService,
     {provide:Toastr_Token, useValue : toastr},
+    {provide:JQ_Token, useValue : jQuery},    
     EventRoutActivatorService,
     AuthService
   ],
